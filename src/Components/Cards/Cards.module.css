@@ -1,0 +1,41 @@
+.Card {
+  height: 400px;
+  text-align: center;
+  margin: auto;
+  color: rgb(70, 70, 70);
+  /* box-shadow: 0 0 2px 2px rgb(226, 242, 255);
+   */
+  box-shadow: 0 0 4px 4px rgb(208, 234, 255);
+  width: 70%;
+  border-radius: 10px;
+  max-width: 250px;
+  margin-top: 40px;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-blue-arc-weather-background-image_253195.jpg");
+}
+
+.Search {
+  outline: none;
+  border-radius: 15px;
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  padding-left: 10px;
+  border: 2px solid rgb(243, 243, 243);
+}
+.WeatherReport {
+  margin-top: 20px;
+}
+.Tempbox {
+  width: 50%;
+  height: 80px;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 20px;
+  box-shadow: 0 0 2px 1px rgb(241, 241, 241);
+}
