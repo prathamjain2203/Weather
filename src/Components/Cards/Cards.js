@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import classes from "./Cards.module.css";
 import axios from "../../axios";
 import debounce from "lodash.debounce";
-import { useCallback } from "react/cjs/react.development";
 
 const dayWeek = [
   "Sunday",
@@ -32,6 +31,7 @@ function Cards() {
   const [inputValue, setInputValue] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
+
   let date = new Date();
   let dateNum = date.getDate();
   let day = date.getDay();
@@ -48,12 +48,12 @@ function Cards() {
       })
       .catch((error) => {
         console.log(error.message);
-        let err = error.message + " " + "Search for correct city...";
+        let err = `${error.message} Search for correct city...`;
         setError(err);
         setWeatherData(null);
       });
   };
-  const debounceFunc = useCallback(debounce(getData, 1000), []);
+  const debounceFunc = useMemo(() => debounce(getData, 1000), []);
   const changeHandler = (e) => {
     setInputValue(e.target.value);
     debounceFunc(e.target.value);
