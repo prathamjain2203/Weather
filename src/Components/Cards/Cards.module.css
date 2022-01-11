@@ -1,15 +1,19 @@
+.CardSection {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .Card {
   height: 400px;
   text-align: center;
-  margin: auto;
-  color: rgb(70, 70, 70);
-  /* box-shadow: 0 0 2px 2px rgb(226, 242, 255);
-   */
-  box-shadow: 0 0 4px 4px rgb(208, 234, 255);
   width: 70%;
-  border-radius: 10px;
   max-width: 250px;
-  margin-top: 40px;
+  color: rgb(70, 70, 70);
+  box-shadow: 0 0 4px 4px rgb(208, 234, 255);
+  border-radius: 10px;
   background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-blue-arc-weather-background-image_253195.jpg");
 }
 

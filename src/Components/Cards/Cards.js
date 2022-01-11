@@ -59,38 +59,44 @@ function Cards() {
     debounceFunc(e.target.value);
   };
   return (
-    <div className={classes.Card}>
-      <input
-        className={classes.Search}
-        type="text"
-        value={inputValue}
-        onChange={changeHandler}
-        placeholder="Search"
-      />
+    <section className={classes.CardSection}>
+      <div className={classes.Card}>
+        <input
+          className={classes.Search}
+          type="text"
+          value={inputValue}
+          onChange={changeHandler}
+          placeholder="Search"
+        />
 
-      {weatherData ? (
-        <div className={classes.WeatherReport}>
-          <h2 style={{ fontWeight: "500" }}>
-            {weatherData.name}, {weatherData.sys.country}
-          </h2>
+        {weatherData ? (
+          <div className={classes.WeatherReport}>
+            <h2 style={{ fontWeight: "500" }}>
+              {weatherData.name}, {weatherData.sys.country}
+            </h2>
 
-          <span style={{ fontSize: "15px", fontWeight: "400" }}>
-            {dayWeek[day]} {dateNum} {monthNames[month]} {year}
-          </span>
+            <span style={{ fontSize: "15px", fontWeight: "400" }}>
+              {dayWeek[day]} {dateNum} {monthNames[month]} {year}
+            </span>
 
-          <div className={classes.Tempbox}>{cTemp}°c</div>
-          {weatherData.clouds.all > 0 ? (
-            <h3
-              style={{ fontWeight: "600", marginTop: "15px", fontSize: "20px" }}
-            >
-              Clouds
-            </h3>
-          ) : null}
-        </div>
-      ) : (
-        <h3 style={{ marginTop: "50px" }}>{error}</h3>
-      )}
-    </div>
+            <div className={classes.Tempbox}>{cTemp}°c</div>
+            {weatherData.clouds.all > 0 ? (
+              <h3
+                style={{
+                  fontWeight: "600",
+                  marginTop: "15px",
+                  fontSize: "20px",
+                }}
+              >
+                Clouds
+              </h3>
+            ) : null}
+          </div>
+        ) : (
+          <h3 style={{ marginTop: "50px" }}>{error}</h3>
+        )}
+      </div>
+    </section>
   );
 }
 
